@@ -2,10 +2,16 @@ package lim;
 
 public class CalendarVO {
 	private int cal_id, class_id;
-	private String title, color, start, schedule_date, schedule, schedule_num, schedule_color, class_name;
+	private String title, color, start, schedule_date, schedule, schedule_num, schedule_color, class_name, schedule_end;
 	
 	
 	
+	public String getSchedule_end() {
+		return schedule_end;
+	}
+	public void setSchedule_end(String schedule_end) {
+		this.schedule_end = schedule_end;
+	}
 	//getter&setter
 	public int getCal_id() {
 		return cal_id;

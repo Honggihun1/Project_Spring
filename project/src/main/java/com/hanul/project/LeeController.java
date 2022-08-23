@@ -275,7 +275,7 @@ public class LeeController {
 	
 		ss.setAttribute("loginInfo", vo);
 		
-		return "redirect:/"; 
+		return "redirect:/main"; 
 	}
 	
 	//네이버로그인
@@ -347,7 +347,7 @@ public class LeeController {
 		}
 		
 		//응답할 화면지정-웰컴
-		return "redirect:/";
+		return "redirect:/main";
 	}
 
 }
