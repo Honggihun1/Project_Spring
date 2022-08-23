@@ -10,13 +10,13 @@
 
 <!-- 일정 추가 -->
 <insert id='insert'>
-	insert into teacher_schedule (teacher_id, schedule_date, schedule, schedule_color)
-	values (#{teacher_id}, #{start}, #{title}, #{color})
+	insert into teacher_schedule (teacher_id, schedule_date, schedule, schedule_color, schedule_end)
+	values (#{teacher_id}, #{start}, #{title}, #{color}, #{end})
 </insert>
 
 <!-- 일정가져오기 -->
 <select id="calendarList" resultType="lim.CalendarVO">
-select schedule, to_char(schedule_date, 'yyyy-mm-dd') schedule_date, schedule_color
+select schedule, to_char(schedule_date, 'yyyy-mm-dd') schedule_date, schedule_color, to_char(schedule_end, 'yyyy-mm-dd') schedule_end
 from teacher_schedule
 where teacher_id=#{teacher_id}
 order by schedule_date

@@ -72,8 +72,8 @@ and class_id = (select class_id from student where student_id=#{student_id})
 
 <!-- 학생한명 출결정보 -->
 <select id="stucheckdetail" resultType="song.SongCheckinVO">
-select to_char(checkin_date, 'yy/mm/dd') checkin_date, to_char(checkin_hour, 'hh:mi:ss') checkin_hour
-        , to_char(checkout_hour, 'hh:mi:ss') checkout_hour
+select to_char(checkin_date, 'yy/mm/dd') checkin_date, to_char(checkin_hour, 'hh24:mi:ss') checkin_hour
+        , to_char(checkout_hour, 'hh24:mi:ss') checkout_hour
 from checkin c left outer join student s 
 on c.student_id = s.student_id
 left outer join class cl

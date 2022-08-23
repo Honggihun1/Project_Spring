@@ -134,7 +134,7 @@ where student_id=(select student_id from student where checkcard_num=#{checkcard
 </update>
 <!-- 출석목록 가져오기 -->
 <select id="check_list" resultType="hong.HongCheckinVO">
-select checkin_num, to_char(checkin_date, 'yy/mm/dd') checkin_date, to_char(checkin_hour, 'hh:mi:ss') checkin_hour, to_char(checkout_hour, 'hh:mi:ss') checkout_hour, s.student_name, cl.class_name
+select checkin_num, to_char(checkin_date, 'yy/mm/dd') checkin_date, to_char(checkin_hour, 'hh24:mi:ss') checkin_hour, to_char(checkout_hour, 'hh24:mi:ss') checkout_hour, s.student_name, cl.class_name
 from checkin c left outer join student s 
 on c.student_id = s.student_id
 left outer join class cl
